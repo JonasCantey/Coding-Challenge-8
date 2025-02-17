@@ -92,3 +92,18 @@ const createCartTracker = () => {    //created a function createCartTracker and 
     let tracker = createCartTracker();
     console.log(tracker(20));
     console.log(tracker(35));
+
+    //Task 8: Recursion in JavaScript
+    console.log("Task 8: Recursion in JavaScript")
+
+                                                //recursive function to calculate revenue growth
+function calculateSavings(years, amount) {
+    if (years >= 10) {                      //base case: stop recursion when years reach 10
+        return `Projected Savings: $${amount.toFixed(2)}`;
+    }
+            //Recursive case: increases revenue by 5% and decrement the years
+    return calculateSavings(years + 1, amount * 1.05);
+}
+
+console.log(calculateSavings(8, 1000));
+console.log(calculateSavings(5, 5000));
