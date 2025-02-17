@@ -77,3 +77,18 @@ function filterHighValueTransactions(transactions, filterFunction) {    //made t
 
 const result = filterHighValueTransactions(transactions, amount => amount > 1000)   //declare a variable result and call the function, then defined the filter function
 console.log(result);    //console.logged the result variable
+
+//Task 7: Closures
+console.log("Task 7: Closures")
+
+const createCartTracker = () => {    //created a function createCartTracker and declared
+    let cart = 0                    //the starting cart as 0. Then made an addExpense
+    const addExpense = (amount) => {        //function that took the total expense and added the amount
+        cart += amount;             //I then had the updated total expense returned.
+        return `Total Cart Value: $${cart}`
+    };
+        return addExpense;      //Returned the inner function
+    };
+    let tracker = createCartTracker();
+    console.log(tracker(20));
+    console.log(tracker(35));
