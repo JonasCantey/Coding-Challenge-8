@@ -39,3 +39,20 @@ const calculateServiceFee = (amount, serviceType) => {  //Declaring the arrow fu
 
 console.log(calculateServiceFee(200, "Premium"));
 console.log(calculateServiceFee(500, "Standard"));
+
+//Task 4: Parameters and Arguments
+console.log("Task 4: Parameters and Arguments")
+
+function calculateRentalCost(days, carType, insurance = false) {    //declared a function that uses the parameters days, carType, and insurance
+    let carTypeRates = {"Economy": 40, "Standard": 60, "Luxury": 100};  //stored the carTypeRates as objects.
+
+    if (insurance === true) {       //used a conditional saying if insurance = true then rentalCost is rate + 20 * days
+        rentalCost = ((carTypeRates[carType] + 20) * days).toFixed(2)
+    } else {                        //if there is no insurance, do not add 20 to the rate.
+        rentalCost = ((carTypeRates[carType]) * days).toFixed(2)
+    }
+    return `Total Rental Cost: $${rentalCost}`  //told the function what to return
+}
+
+console.log(calculateRentalCost(3, "Economy", true));
+console.log(calculateRentalCost(5, "Luxury", false));
